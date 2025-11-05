@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BagiCerita - Berani Bicara, Mau Mendengar</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <style>
+      /* Menggunakan font Inter secara default */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f9fafb; /* Light Gray Background */
+      }
+      /* Definisikan palet warna dari logo: Biru gelap dan Oranye */
+      .color-primary {
+        background-color: #1e40af;
+      } /* Blue 800 */
+      .text-primary {
+        color: #1e40af;
+      }
+      .color-accent {
+        background-color: #f97316;
+      } /* Orange 600 */
+      .text-accent {
+        color: #f97316;
+      }
+      .border-accent {
+        border-color: #f97316;
+      }
+      .shadow-custom {
+        box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.1),
+          0 4px 6px -2px rgba(30, 64, 175, 0.05);
+      }
+      .section-padding {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-50 bg-white shadow-lg border-t-4 border-accent"
+    >
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <!-- Logo & Title -->
+        <a href="#hero" class="flex items-center space-x-2">
+          <!-- Logo: Menggantikan logo asli dengan placeholder yang sesuai dengan branding Biru-Oranye -->
+          <img
+            src="logo.png"
+            alt="Logo BagiCerita"
+            class="h-8 md:h-10 w-auto rounded-full p-0.5 border-2 border-orange-500"
+          />
+          <span class="text-xl md:text-2xl font-extrabold text-blue-800"
+            >Bagi<span class="text-orange-600">Cerita</span></span
+          >
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a
+            href="#tentang"
+            class="text-gray-600 hover:text-blue-700 font-medium transition duration-150"
+            >Tentang</a
+          >
+          <a
+            href="#format"
+            class="text-gray-600 hover:text-blue-700 font-medium transition duration-150"
+            >Format</a
+          >
+          <a
+            href="#visi"
+            class="text-gray-600 hover:text-blue-700 font-medium transition duration-150"
+            >Visi</a
+          >
+          <a
+            href="#gabung"
+            class="color-accent text-white font-bold py-2 px-4 rounded-full hover:bg-orange-700 transition duration-300 shadow-lg"
+            >Yuk, Gabung!</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button (Placeholder for JS toggle) -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-600 hover:text-blue-700 p-2 rounded-md transition duration-150"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Dropdown (Hidden by default) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-200 py-2"
+      >
+        <a
+          href="#tentang"
+          class="block px-6 py-2 text-gray-700 hover:bg-gray-50"
+          >Tentang</a
+        >
+        <a href="#format" class="block px-6 py-2 text-gray-700 hover:bg-gray-50"
+          >Format</a
+        >
+        <a href="#visi" class="block px-6 py-2 text-gray-700 hover:bg-gray-50"
+          >Visi</a
+        >
+        <a
+          href="#gabung"
+          class="block px-6 py-2 text-orange-600 font-semibold hover:bg-gray-50"
+          >Yuk, Gabung!</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="color-primary text-white section-padding">
+      <div class="container mx-auto px-6 text-center">
+        <p
+          class="text-sm font-semibold text-orange-400 uppercase tracking-widest mb-3"
+        >
+          #BagiCerita #MahasiswaBerbagi
+        </p>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+          Berani Bicara, Mau Mendengar.
+        </h1>
+        <p class="text-lg md:text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+          Ruang berbagi dan berdiskusi bagi mahasiswa untuk saling mendengarkan
+          pengalaman, perjalanan, dan pandangan hidup. Dari Cerita, Kita
+          Belajar.
+        </p>
+        <a
+          href="#gabung"
+          class="color-accent text-white font-extrabold text-lg py-3 px-8 rounded-full hover:bg-orange-700 transition duration-300 shadow-xl shadow-orange-700/50 transform hover:scale-105 inline-flex items-center space-x-2"
+        >
+          <i data-lucide="calendar-check" class="w-5 h-5"></i>
+          <span>Gabung Sesi Selasa Malam</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section: Apa itu BagiCerita? -->
+    <section id="tentang" class="section-padding bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <span class="text-lg font-bold text-orange-600 block mb-2"
+            >🌱 APA ITU BAGICERITA?</span
+          >
+          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8">
+            Ruang Santai untuk Tumbuh Bersama.
+          </h2>
+          <div class="text-gray-700 text-lg leading-relaxed mb-10">
+            <p class="mb-4">
+              BagiCerita adalah ruang santai bagi mahasiswa untuk saling berbagi
+              pengalaman, ide, dan pandangan hidup. Di sini, setiap orang bisa
+              bercerita — tentang magang, organisasi, perjalanan kuliah, atau
+              apa pun yang bisa jadi pelajaran buat orang lain.
+            </p>
+            <p>
+              Lewat kegiatan ini, kita belajar untuk berani berbicara di depan
+              orang lain dan mau mendengar dari sudut pandang yang berbeda.
+              Karena setiap cerita punya makna, dan dari cerita orang lain, kita
+              juga bisa tumbuh. 🌿
+            </p>
+          </div>
+
+          <!-- Tujuan -->
+          <span class="text-lg font-bold text-blue-700 block mb-4"
+            >🎯 TUJUAN KAMI</span
+          >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              class="p-6 bg-blue-50 rounded-xl shadow-md flex items-start space-x-4"
+            >
+              <i
+                data-lucide="megaphone"
+                class="text-blue-700 w-6 h-6 flex-shrink-0 mt-1"
+              ></i>
+              <div>
+                <p class="font-bold text-blue-800">Menumbuhkan Keberanian</p>
+                <p class="text-sm text-gray-600">
+                  Membangun kepercayaan diri mahasiswa untuk berbicara di depan
+                  umum.
+                </p>
+              </div>
+            </div>
+            <div
+              class="p-6 bg-blue-50 rounded-xl shadow-md flex items-start space-x-4"
+            >
+              <i
+                data-lucide="ear"
+                class="text-blue-700 w-6 h-6 flex-shrink-0 mt-1"
+              ></i>
+              <div>
+                <p class="font-bold text-blue-800">Membangun Empati</p>
+                <p class="text-sm text-gray-600">
+                  Membiasakan diri untuk mendengar dan menghargai perspektif
+                  orang lain.
+                </p>
+              </div>
+            </div>
+            <div
+              class="p-6 bg-blue-50 rounded-xl shadow-md flex items-start space-x-4"
+            >
+              <i
+                data-lucide="lightbulb"
+                class="text-blue-700 w-6 h-6 flex-shrink-0 mt-1"
+              ></i>
+              <div>
+                <p class="font-bold text-blue-800">Ruang Inspiratif</p>
+                <p class="text-sm text-gray-600">
+                  Menyediakan wadah inspiratif di luar kegiatan akademik dan
+                  menghubungkan lintas jurusan.
+                </p>
+              </div>
+            </div>
+            <div
+              class="p-6 bg-blue-50 rounded-xl shadow-md flex items-start space-x-4"
+            >
+              <i
+                data-lucide="users"
+                class="text-blue-700 w-6 h-6 flex-shrink-0 mt-1"
+              ></i>
+              <div>
+                <p class="font-bold text-blue-800">Komunitas Positif</p>
+                <p class="text-sm text-gray-600">
+                  Menumbuhkan komunitas yang saling mendukung dan berbagi
+                  insight positif.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Format Kegiatan Section -->
+    <section id="format" class="section-padding bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="text-lg font-bold text-orange-600 block mb-2"
+            >💬 FORMAT KEGIATAN</span
+          >
+          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12">
+            Setiap Selasa Malam, ± 1 Jam Penuh Makna.
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Jadwal -->
+            <div
+              class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-orange-500 hover:shadow-xl transition duration-300"
+            >
+              <i
+                data-lucide="calendar"
+                class="text-orange-500 w-8 h-8 mx-auto mb-3"
+              ></i>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Waktu Rutin</h3>
+              <p class="text-gray-600 font-semibold">Setiap Selasa</p>
+              <p class="text-2xl font-extrabold text-orange-600">20.00 WIB</p>
+            </div>
+
+            <!-- Platform -->
+            <div
+              class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition duration-300"
+            >
+              <i
+                data-lucide="monitor"
+                class="text-blue-500 w-8 h-8 mx-auto mb-3"
+              ></i>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Platform</h3>
+              <p class="text-gray-600 font-semibold">Online & Santai</p>
+              <p class="text-2xl font-extrabold text-blue-600">Google Meet</p>
+            </div>
+
+            <!-- Durasi -->
+            <div
+              class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-orange-500 hover:shadow-xl transition duration-300"
+            >
+              <i
+                data-lucide="clock"
+                class="text-orange-500 w-8 h-8 mx-auto mb-3"
+              ></i>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Total Durasi</h3>
+              <p class="text-gray-600 font-semibold">Fokus dan Efisien</p>
+              <p class="text-2xl font-extrabold text-orange-600">± 1 Jam</p>
+            </div>
+          </div>
+
+          <!-- Rangkaian Acara -->
+          <div class="max-w-2xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Rangkaian Acara
+            </h3>
+            <ul class="space-y-3 text-left">
+              <li
+                class="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
+              >
+                <span class="text-gray-700 font-medium"
+                  >Pembukaan Singkat & Sambutan</span
+                >
+                <span class="text-sm font-semibold text-gray-500">5 Menit</span>
+              </li>
+              <li
+                class="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm border-l-4 border-orange-500"
+              >
+                <span class="text-gray-800 font-bold"
+                  >Cerita Utama dari Narasumber</span
+                >
+                <span class="text-sm font-semibold text-orange-600"
+                  >30 Menit</span
+                >
+              </li>
+              <li
+                class="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
+              >
+                <span class="text-gray-800 font-bold"
+                  >Sesi Tanya Jawab & Diskusi Empati</span
+                >
+                <span class="text-sm font-semibold text-blue-600"
+                  >25 Menit</span
+                >
+              </li>
+              <li
+                class="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
+              >
+                <span class="text-gray-700 font-medium"
+                  >Penutup & Dokumentasi (5 menit)</span
+                >
+                <span class="text-sm font-semibold text-gray-500">5 Menit</span>
+              </li>
+            </ul>
+            <p class="mt-4 text-sm italic text-gray-500">
+              Sesi akan direkam (dengan izin) untuk dokumentasi dan
+              pembelajaran.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="visi" class="section-padding color-primary text-white">
+      <div class="container mx-auto px-6 text-center">
+        <span class="text-lg font-bold text-orange-400 block mb-2"
+          >🚀 VISI KE DEPAN</span
+        >
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 max-w-4xl mx-auto">
+          Menghidupkan Kembali Budaya Bicara, Mendengar, dan Belajar Bersama.
+        </h2>
+        <p class="text-lg md:text-xl text-blue-200 mb-10 max-w-3xl mx-auto">
+          "Menjadikan BagiCerita sebagai gerakan mahasiswa yang menghidupkan
+          kembali budaya bicara, mendengar, dan belajar bersama."
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-blue-600/50"
+        >
+          <div class="p-4 bg-blue-700 rounded-xl">
+            <i
+              data-lucide="mic"
+              class="w-8 h-8 text-orange-400 mx-auto mb-3"
+            ></i>
+            <p class="font-bold text-lg">BagiCerita Live</p>
+            <p class="text-sm text-blue-200">
+              Mengembangkan sesi offline talk/bedah cerita di kampus.
+            </p>
+          </div>
+          <div class="p-4 bg-blue-700 rounded-xl">
+            <i
+              data-lucide="clapperboard"
+              class="w-8 h-8 text-orange-400 mx-auto mb-3"
+            ></i>
+            <p class="font-bold text-lg">Konten Inspiratif</p>
+            <p class="text-sm text-blue-200">
+              Video pendek di Instagram/YouTube untuk menjangkau lebih luas.
+            </p>
+          </div>
+          <div class="p-4 bg-blue-700 rounded-xl">
+            <i
+              data-lucide="combine"
+              class="w-8 h-8 text-orange-400 mx-auto mb-3"
+            ></i>
+            <p class="font-bold text-lg">Kolaborasi Lintas</p>
+            <p class="text-sm text-blue-200">
+              Kolaborasi dengan organisasi dan komunitas lintas kampus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Join / CTA Section -->
+    <section id="gabung" class="section-padding bg-white">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto"
+        >
+          <!-- Why Join -->
+          <div class="bg-gray-50 p-8 rounded-2xl shadow-xl">
+            <span class="text-lg font-bold text-blue-700 block mb-2"
+              >💡 KENAPA KAMU HARUS IKUT?</span
+            >
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">
+              Cerita Kecilmu Punya Dampak Besar.
+            </h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+              Kadang yang kamu anggap biasa, bisa jadi inspirasi buat temanmu
+              yang lagi butuh semangat. Di BagiCerita, kita percaya setiap
+              pengalaman adalah pelajaran berharga.
+            </p>
+            <p class="font-extrabold text-orange-600 text-xl">
+              Jadi… yuk, mulai dari cerita 😊
+            </p>
+            <p class="mt-4 text-sm text-gray-500 italic">
+              Siapa pun kamu, cerita kamu berarti.
+            </p>
+          </div>
+
+          <!-- Join Mechanics -->
+          <div
+            class="p-8 bg-white rounded-2xl border border-gray-200 shadow-xl"
+          >
+            <span class="text-lg font-bold text-orange-600 block mb-4"
+              >🧠 CARA GABUNG</span
+            >
+            <ol class="space-y-4 text-lg">
+              <li class="flex items-start space-x-3">
+                <span class="font-extrabold text-orange-600 text-2xl">1.</span>
+                <p class="text-gray-700">
+                  Cek jadwal mingguan di grup HIMASI atau Instagram (coming
+                  soon).
+                </p>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="font-extrabold text-orange-600 text-2xl">2.</span>
+                <p class="text-gray-700">
+                  Klik link Google Meet tiap Selasa malam jam 8.
+                </p>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="font-extrabold text-orange-600 text-2xl">3.</span>
+                <p class="text-gray-700">
+                  Kalau mau **bercerita** sebagai narasumber, isi formulir ini:
+                </p>
+              </li>
+            </ol>
+
+            <a
+              href="https://forms.gle/ZvgfDig65bmGzT9q7"
+              target="_blank"
+              class="w-full text-center mt-6 color-accent text-white font-extrabold py-3 px-6 rounded-xl hover:bg-orange-700 transition duration-300 shadow-lg block transform hover:scale-[1.02]"
+            >
+              <i data-lucide="form-input" class="w-5 h-5 inline-block mr-2"></i>
+              Isi Form Pendaftaran Narasumber
+            </a>
+            <p class="mt-3 text-sm text-gray-500 text-center">
+              Tim BagiCerita akan menghubungi Anda untuk jadwal sesi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+      <div class="container mx-auto px-6 text-center">
+        <!-- Logo in Footer -->
+        <a href="#hero" class="flex justify-center items-center space-x-2 mb-4">
+          <img
+            src="logo.png"
+            alt="Logo BagiCerita"
+            class="h-6 w-auto rounded-full p-0.5 border-2 border-orange-500"
+          />
+          <span class="text-xl font-extrabold text-white"
+            >Bagi<span class="text-orange-500">Cerita</span></span
+          >
+        </a>
+
+        <p class="text-gray-400 mb-4">
+          "Menghidupkan Kembali Budaya Bicara, Mendengar, dan Belajar Bersama."
+        </p>
+
+        <div class="flex justify-center space-x-6 text-gray-400">
+          <a
+            href="https://www.instagram.com/bagiceritaa_/"
+            target="_blank"
+            class="hover:text-orange-500 transition duration-300"
+            title="Instagram (Coming Soon)"
+          >
+            <i data-lucide="instagram" class="w-6 h-6"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@BagiCerita45"
+            target="_blank"
+            class="hover:text-orange-500 transition duration-300"
+            title="YouTube (Coming Soon)"
+          >
+            <i data-lucide="youtube" class="w-6 h-6"></i>
+          </a>
+          <a
+            href="bagicerita745@gmail.com"
+            target="_blank"
+            class="hover:text-orange-500 transition duration-300"
+            title="Email Kontak"
+          >
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <p class="mt-8 text-sm text-gray-500">
+          &copy; <span id="current-year"></span> BagiCerita Community. Dibuat
+          dengan semangat berbagi.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Footer Year -->
+    <script>
+      // Inisialisasi ikon Lucide
+      lucide.createIcons();
+
+      // 1. Mobile Menu Toggle
+      const menuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when a link is clicked
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // 2. Set Current Year in Footer
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
